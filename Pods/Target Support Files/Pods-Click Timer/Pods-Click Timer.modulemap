@@ -1,0 +1,6 @@
+framework module Pods_Click_Timer {
+  umbrella header "Pods-Click Timer-umbrella.h"
+
+  export *
+  module * { export * }
+}

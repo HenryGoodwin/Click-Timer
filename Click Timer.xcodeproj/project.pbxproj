@@ -1,0 +1,390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0224B55A58EDEB5A388ACC31 /* Pods_Click_Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7AC68684CB1A69175DE0B5 /* Pods_Click_Timer.framework */; };
+		225F47A51CE6D5E8002475A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F47A41CE6D5E8002475A4 /* AppDelegate.swift */; };
+		225F47AA1CE6D5E8002475A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225F47A81CE6D5E8002475A4 /* Main.storyboard */; };
+		225F47AC1CE6D5E8002475A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225F47AB1CE6D5E8002475A4 /* Assets.xcassets */; };
+		225F47AF1CE6D5E8002475A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225F47AD1CE6D5E8002475A4 /* LaunchScreen.storyboard */; };
+		225F47B71CE6D5F4002475A4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 225F47B61CE6D5F4002475A4 /* Podfile */; };
+		225F47B91CE6D92C002475A4 /* ClickTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F47B81CE6D92C002475A4 /* ClickTimerVC.swift */; };
+		225F47BB1CE6D98F002475A4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F47BA1CE6D98F002475A4 /* RoundedButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		225F47A11CE6D5E8002475A4 /* Click Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Click Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		225F47A41CE6D5E8002475A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		225F47A91CE6D5E8002475A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		225F47AB1CE6D5E8002475A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		225F47AE1CE6D5E8002475A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		225F47B01CE6D5E8002475A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		225F47B61CE6D5F4002475A4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		225F47B81CE6D92C002475A4 /* ClickTimerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickTimerVC.swift; sourceTree = "<group>"; };
+		225F47BA1CE6D98F002475A4 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		22ED89772966F994DCBC8059 /* Pods-Click Timer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Click Timer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Click Timer/Pods-Click Timer.debug.xcconfig"; sourceTree = "<group>"; };
+		56FCD2875A16F23565CDB192 /* Pods-Click Timer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Click Timer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Click Timer/Pods-Click Timer.release.xcconfig"; sourceTree = "<group>"; };
+		CB7AC68684CB1A69175DE0B5 /* Pods_Click_Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Click_Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		225F479E1CE6D5E8002475A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0224B55A58EDEB5A388ACC31 /* Pods_Click_Timer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		225F47981CE6D5E8002475A4 = {
+			isa = PBXGroup;
+			children = (
+				225F47B61CE6D5F4002475A4 /* Podfile */,
+				225F47A31CE6D5E8002475A4 /* Click Timer */,
+				225F47A21CE6D5E8002475A4 /* Products */,
+				5EBC2CC4856BDF7CE654607D /* Pods */,
+				2FB6C66BD57ABACC64BA7144 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		225F47A21CE6D5E8002475A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				225F47A11CE6D5E8002475A4 /* Click Timer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		225F47A31CE6D5E8002475A4 /* Click Timer */ = {
+			isa = PBXGroup;
+			children = (
+				225F47A41CE6D5E8002475A4 /* AppDelegate.swift */,
+				225F47BA1CE6D98F002475A4 /* RoundedButton.swift */,
+				225F47B81CE6D92C002475A4 /* ClickTimerVC.swift */,
+				225F47A81CE6D5E8002475A4 /* Main.storyboard */,
+				225F47AB1CE6D5E8002475A4 /* Assets.xcassets */,
+				225F47AD1CE6D5E8002475A4 /* LaunchScreen.storyboard */,
+				225F47B01CE6D5E8002475A4 /* Info.plist */,
+			);
+			path = "Click Timer";
+			sourceTree = "<group>";
+		};
+		2FB6C66BD57ABACC64BA7144 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB7AC68684CB1A69175DE0B5 /* Pods_Click_Timer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EBC2CC4856BDF7CE654607D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22ED89772966F994DCBC8059 /* Pods-Click Timer.debug.xcconfig */,
+				56FCD2875A16F23565CDB192 /* Pods-Click Timer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		225F47A01CE6D5E8002475A4 /* Click Timer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 225F47B31CE6D5E8002475A4 /* Build configuration list for PBXNativeTarget "Click Timer" */;
+			buildPhases = (
+				32D881CC5F3F94C1C7067B02 /* Check Pods Manifest.lock */,
+				225F479D1CE6D5E8002475A4 /* Sources */,
+				225F479E1CE6D5E8002475A4 /* Frameworks */,
+				225F479F1CE6D5E8002475A4 /* Resources */,
+				9FEA1EA3D7CE0D2F63DF8E86 /* Embed Pods Frameworks */,
+				8A71AD23D2CF9276863F3C4A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Click Timer";
+			productName = "Click Timer";
+			productReference = 225F47A11CE6D5E8002475A4 /* Click Timer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		225F47991CE6D5E8002475A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Henry Goodwin";
+				TargetAttributes = {
+					225F47A01CE6D5E8002475A4 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F5U388WAA7;
+					};
+				};
+			};
+			buildConfigurationList = 225F479C1CE6D5E8002475A4 /* Build configuration list for PBXProject "Click Timer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 225F47981CE6D5E8002475A4;
+			productRefGroup = 225F47A21CE6D5E8002475A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				225F47A01CE6D5E8002475A4 /* Click Timer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		225F479F1CE6D5E8002475A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225F47AF1CE6D5E8002475A4 /* LaunchScreen.storyboard in Resources */,
+				225F47AC1CE6D5E8002475A4 /* Assets.xcassets in Resources */,
+				225F47B71CE6D5F4002475A4 /* Podfile in Resources */,
+				225F47AA1CE6D5E8002475A4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32D881CC5F3F94C1C7067B02 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A71AD23D2CF9276863F3C4A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Click Timer/Pods-Click Timer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FEA1EA3D7CE0D2F63DF8E86 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Click Timer/Pods-Click Timer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		225F479D1CE6D5E8002475A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225F47A51CE6D5E8002475A4 /* AppDelegate.swift in Sources */,
+				225F47BB1CE6D98F002475A4 /* RoundedButton.swift in Sources */,
+				225F47B91CE6D92C002475A4 /* ClickTimerVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		225F47A81CE6D5E8002475A4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				225F47A91CE6D5E8002475A4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		225F47AD1CE6D5E8002475A4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				225F47AE1CE6D5E8002475A4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		225F47B11CE6D5E8002475A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		225F47B21CE6D5E8002475A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		225F47B41CE6D5E8002475A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22ED89772966F994DCBC8059 /* Pods-Click Timer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Click Timer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Henry-Goodwin.Click-Timer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		225F47B51CE6D5E8002475A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56FCD2875A16F23565CDB192 /* Pods-Click Timer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Click Timer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Henry-Goodwin.Click-Timer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		225F479C1CE6D5E8002475A4 /* Build configuration list for PBXProject "Click Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225F47B11CE6D5E8002475A4 /* Debug */,
+				225F47B21CE6D5E8002475A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		225F47B31CE6D5E8002475A4 /* Build configuration list for PBXNativeTarget "Click Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225F47B41CE6D5E8002475A4 /* Debug */,
+				225F47B51CE6D5E8002475A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 225F47991CE6D5E8002475A4 /* Project object */;
+}
