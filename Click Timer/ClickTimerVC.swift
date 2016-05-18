@@ -9,7 +9,11 @@
 import UIKit
 import iAd
 
-class ClickTimerVC: UIViewController, ADBannerViewDelegate {
+class ClickTimerVC: UIViewController, ADBannerViewDelegate, ADInterstitialAdDelegate{
+    
+    var interAd = ADInterstitialAd()
+    var interAdView: UIView = UIView()
+    var closeButton = UIButton(type: UIButtonType.System) as UIButton
     
     var timer:NSTimer = NSTimer()
     var startTime = NSTimeInterval()
@@ -28,6 +32,7 @@ class ClickTimerVC: UIViewController, ADBannerViewDelegate {
     var strFrac: String!
     
     var score: Int!
+    var rep = 0
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var startStopBtn: UIButton!
@@ -38,12 +43,23 @@ class ClickTimerVC: UIViewController, ADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        rep = 0
         self.canDisplayBannerAds = true
         self.adBannerView?.delegate = self
         self.adBannerView?.hidden = true
 
         clearBtn.alpha = DIM_ALPHA
         clearBtn.enabled = false
+        
+        closeButton.frame = CGRectMake(20, 80, 25, 25)
+        closeButton.layer.cornerRadius = closeButton.frame.size.width/2
+        closeButton.layer.masksToBounds = true
+        closeButton.setTitle("x", forState: .Normal)
+        closeButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        closeButton.backgroundColor = UIColor.whiteColor()
+        closeButton.layer.borderColor = UIColor.blackColor().CGColor
+        closeButton.layer.borderWidth = 1
+        closeButton.addTarget(self, action: #selector(ClickTimerVC.close(_:)), forControlEvents: UIControlEvents.TouchDown)
         
         let fractionDefults = NSUserDefaults.standardUserDefaults()
         let secondDefults = NSUserDefaults.standardUserDefaults()
@@ -66,6 +82,46 @@ class ClickTimerVC: UIViewController, ADBannerViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func close(sender: UIButton) {
+        closeButton.removeFromSuperview()
+        interAdView.removeFromSuperview()
+        adBannerView?.hidden = false
+        rep = 0
+    }
+    
+    func loadAd() {
+        print("load ad")
+        interAd = ADInterstitialAd()
+        interAd.delegate = self
+    }
+    
+    func interstitialAdDidLoad(interstitialAd: ADInterstitialAd!) {
+        print("ad did load")
+        
+        interAdView = UIView()
+        interAdView.frame = self.view.bounds
+        view.addSubview(interAdView)
+        
+        interAd.presentInView(interAdView)
+        UIViewController.prepareInterstitialAds()
+        
+        interAdView.addSubview(closeButton)
+    }
+    
+    func interstitialAdDidUnload(interstitialAd: ADInterstitialAd!) {
+        
+    }
+    
+    func interstitialAd(interstitialAd: ADInterstitialAd!, didFailWithError error: NSError!) {
+        print("failed to receive")
+        print(error.localizedDescription)
+        
+        closeButton.removeFromSuperview()
+        interAdView.removeFromSuperview()
+        
+    }
+
+    
     @IBAction func startStopTimer(sender: UIButton) {
         
         if (!timer.valid) {
@@ -82,7 +138,6 @@ class ClickTimerVC: UIViewController, ADBannerViewDelegate {
         } else if (timer.valid) {
             
             invalidate()
-            
 //            print(score)
             
         }
@@ -123,13 +178,23 @@ class ClickTimerVC: UIViewController, ADBannerViewDelegate {
     }
     
     @IBAction func clear(sender: UIButton) {
-      
+        
+        if rep != 5 {
+        rep = rep + 1
+        }
+        
         label.text = "00:00"
         startStopBtn.enabled = true
         startStopBtn.alpha = OPAQUE
         
         clearBtn.enabled = false
         clearBtn.alpha = DIM_ALPHA
+        print(rep)
+        if rep == 5 {
+        adBannerView?.hidden = true
+        loadAd()
+        rep = 0
+        }
         
         
         
