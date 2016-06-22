@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller initiallyAnimated="NO" spacing="10" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Click_Timer_Watch" customModuleProvider="target">
+                    <items>
+                        <label width="0.90000000000000002" height="0.20000000000000001" alignment="center" text="Highscore" textAlignment="center" id="3eE-NB-k6c"/>
+                        <label width="0.90000000000000002" height="0.20000000000000001" alignment="center" text="Score" textAlignment="center" id="Ayg-1k-vPk"/>
+                        <separator width="0.90000000000000002" alignment="center" id="MQ4-3F-Ozo"/>
+                        <button width="0.90000000000000002" height="0.25" alignment="center" title="Start" id="LCZ-hp-a7c">
+                            <connections>
+                                <action selector="startStop" destination="AgC-eL-Hgc" id="kem-V1-CGj"/>
+                            </connections>
+                        </button>
+                        <button width="0.90000000000000002" height="0.25" alignment="center" title="Reset" id="6YE-g3-X1c">
+                            <connections>
+                                <action selector="resetBtn" destination="AgC-eL-Hgc" id="OrQ-lE-sGL"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="highs" destination="3eE-NB-k6c" id="ePi-jQ-jgh"/>
+                        <outlet property="label" destination="Ayg-1k-vPk" id="a9K-8g-UwP"/>
+                        <outlet property="reset" destination="6YE-g3-X1c" id="d96-Ze-YYf"/>
+                        <outlet property="start" destination="LCZ-hp-a7c" id="2UY-l7-pX8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="339.5"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Click_Timer_Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

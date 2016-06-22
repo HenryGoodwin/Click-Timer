@@ -41,77 +41,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="JO3-8C-xzW">
-                                <rect key="frame" x="60" y="534" width="480" height="66"/>
-                            </adBannerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F4W-Az-1BO">
-                                <rect key="frame" x="20" y="232" width="560" height="282"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HNm-ir-E0S">
+                                <rect key="frame" x="20" y="84" width="560" height="446"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cna-3H-BZL" customClass="RoundedButton" customModule="Click_Timer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="131"/>
-                                        <color key="backgroundColor" red="0.18039215689999999" green="0.52941176469999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
-                                        <state key="normal" title="Start">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="startStopTimer:" destination="JGQ-Iq-hEV" eventType="touchUpInside" id="Czs-lC-L4i"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eix-hB-YQV" customClass="RoundedButton" customModule="Click_Timer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="151" width="560" height="131"/>
-                                        <color key="backgroundColor" red="0.18039215689999999" green="0.52941176469999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
-                                        <state key="normal" title="Reset">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clear:" destination="JGQ-Iq-hEV" eventType="touchUpInside" id="j6j-m4-daE"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tGy-gE-hCv">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highscore: 00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfG-Lx-aew">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="54"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeQ-gt-4W3">
+                                                <rect key="frame" x="0.0" y="74" width="560" height="54"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="FfG-Lx-aew" secondAttribute="trailing" id="AYg-LS-eMU"/>
+                                            <constraint firstAttribute="height" constant="128" id="hnp-hF-fC9"/>
+                                            <constraint firstItem="FfG-Lx-aew" firstAttribute="leading" secondItem="tGy-gE-hCv" secondAttribute="leading" id="v4F-RI-Rz6"/>
+                                            <constraint firstItem="FfG-Lx-aew" firstAttribute="top" secondItem="tGy-gE-hCv" secondAttribute="top" id="yDm-pI-oNu"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F4W-Az-1BO">
+                                        <rect key="frame" x="0.0" y="148" width="560" height="298"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cna-3H-BZL" customClass="RoundedButton" customModule="Click_Timer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="139"/>
+                                                <color key="backgroundColor" red="0.18039215689999999" green="0.52941176469999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startStopTimer:" destination="JGQ-Iq-hEV" eventType="touchUpInside" id="Czs-lC-L4i"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eix-hB-YQV" customClass="RoundedButton" customModule="Click_Timer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="159" width="560" height="139"/>
+                                                <color key="backgroundColor" red="0.18039215689999999" green="0.52941176469999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                                                <state key="normal" title="Reset">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clear:" destination="JGQ-Iq-hEV" eventType="touchUpInside" id="j6j-m4-daE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tGy-gE-hCv">
-                                <rect key="frame" x="20" y="84" width="560" height="128"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highscore: 00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfG-Lx-aew">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="54"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeQ-gt-4W3">
-                                        <rect key="frame" x="0.0" y="74" width="560" height="54"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p51-15-SO6" customClass="GADBannerView">
+                                <rect key="frame" x="140" y="550" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="FfG-Lx-aew" secondAttribute="trailing" id="AYg-LS-eMU"/>
-                                    <constraint firstAttribute="height" constant="128" id="hnp-hF-fC9"/>
-                                    <constraint firstItem="FfG-Lx-aew" firstAttribute="leading" secondItem="tGy-gE-hCv" secondAttribute="leading" id="v4F-RI-Rz6"/>
-                                    <constraint firstItem="FfG-Lx-aew" firstAttribute="top" secondItem="tGy-gE-hCv" secondAttribute="top" id="yDm-pI-oNu"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ipw-z4-Otw"/>
+                                    <constraint firstAttribute="width" constant="320" id="TYb-gR-cUb"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.94901960780000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="F4W-Az-1BO" secondAttribute="trailing" id="62R-Mg-0sk"/>
-                            <constraint firstItem="F4W-Az-1BO" firstAttribute="top" secondItem="tGy-gE-hCv" secondAttribute="bottom" constant="20" id="CO9-Bl-FHR"/>
-                            <constraint firstItem="F4W-Az-1BO" firstAttribute="leading" secondItem="OlQ-tZ-Wpx" secondAttribute="leadingMargin" id="KzH-0l-Bza"/>
-                            <constraint firstItem="tGy-gE-hCv" firstAttribute="leading" secondItem="OlQ-tZ-Wpx" secondAttribute="leadingMargin" id="NjT-4x-6JK"/>
-                            <constraint firstItem="JO3-8C-xzW" firstAttribute="bottom" secondItem="F4W-Az-1BO" secondAttribute="bottom" constant="67" id="YV1-3Y-N9z"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tGy-gE-hCv" secondAttribute="trailing" id="e3U-cD-1fX"/>
-                            <constraint firstItem="JO3-8C-xzW" firstAttribute="baseline" secondItem="F4W-Az-1BO" secondAttribute="bottomMargin" constant="86" id="kg8-TG-iIe"/>
-                            <constraint firstItem="tGy-gE-hCv" firstAttribute="top" secondItem="pRj-vi-My6" secondAttribute="bottom" constant="20" id="klb-hU-s6f"/>
-                            <constraint firstItem="F4W-Az-1BO" firstAttribute="centerX" secondItem="OlQ-tZ-Wpx" secondAttribute="centerX" id="tTx-xi-1Gc"/>
-                            <constraint firstItem="JO3-8C-xzW" firstAttribute="centerX" secondItem="OlQ-tZ-Wpx" secondAttribute="centerX" id="uYM-20-Vhl"/>
-                            <constraint firstItem="QMm-1Y-Zhu" firstAttribute="top" secondItem="JO3-8C-xzW" secondAttribute="bottom" id="vkf-j2-eQN"/>
+                            <constraint firstItem="p51-15-SO6" firstAttribute="centerX" secondItem="OlQ-tZ-Wpx" secondAttribute="centerX" id="311-6E-Sl4"/>
+                            <constraint firstItem="QMm-1Y-Zhu" firstAttribute="top" secondItem="HNm-ir-E0S" secondAttribute="bottom" constant="20" id="5Rw-Xf-HK2"/>
+                            <constraint firstItem="QMm-1Y-Zhu" firstAttribute="top" secondItem="p51-15-SO6" secondAttribute="bottom" id="G2K-Md-Cp6"/>
+                            <constraint firstItem="HNm-ir-E0S" firstAttribute="top" secondItem="pRj-vi-My6" secondAttribute="bottom" constant="20" id="JLp-fM-dce"/>
+                            <constraint firstItem="p51-15-SO6" firstAttribute="top" secondItem="HNm-ir-E0S" secondAttribute="bottom" constant="20" id="Nwg-pN-A0s"/>
+                            <constraint firstItem="HNm-ir-E0S" firstAttribute="leading" secondItem="OlQ-tZ-Wpx" secondAttribute="leadingMargin" id="Rkw-nt-TgP"/>
+                            <constraint firstItem="p51-15-SO6" firstAttribute="top" secondItem="HNm-ir-E0S" secondAttribute="baseline" constant="70" id="iI3-N7-RTH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HNm-ir-E0S" secondAttribute="trailing" id="yqa-XY-meP"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="YV1-3Y-N9z"/>
+                                <exclude reference="iI3-N7-RTH"/>
+                                <exclude reference="5Rw-Xf-HK2"/>
                             </mask>
                         </variation>
                     </view>
@@ -123,7 +131,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="adBannerView" destination="JO3-8C-xzW" id="n30-Ya-PbB"/>
+                        <outlet property="banner" destination="p51-15-SO6" id="VcY-eA-Lje"/>
                         <outlet property="clearBtn" destination="eix-hB-YQV" id="2UX-jR-muD"/>
                         <outlet property="highscoreLbl" destination="FfG-Lx-aew" id="eNC-yW-ovR"/>
                         <outlet property="label" destination="jeQ-gt-4W3" id="chB-zv-eBH"/>
