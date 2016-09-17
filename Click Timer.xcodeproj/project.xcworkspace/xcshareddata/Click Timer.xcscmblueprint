@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F673C5E9AE21A8A346C2CBA0FBD61386AF17616F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F673C5E9AE21A8A346C2CBA0FBD61386AF17616F" : 0,
+    "010FD8D380D513C1D981492E330ECBBE2B5E9772" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5543D238-1A99-4710-9563-154D984987A4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F673C5E9AE21A8A346C2CBA0FBD61386AF17616F" : "Click%20Timer\/",
+    "010FD8D380D513C1D981492E330ECBBE2B5E9772" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Click Timer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Click Timer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:HenryGoodwin\/Yes-No-Maybe.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "010FD8D380D513C1D981492E330ECBBE2B5E9772"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:HenryGoodwin\/Click-Timer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F673C5E9AE21A8A346C2CBA0FBD61386AF17616F"
+    }
+  ]
+}

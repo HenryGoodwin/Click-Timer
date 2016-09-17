@@ -35,6 +35,7 @@
 		2280B6D21D0253CE00D27AA2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2280B6D11D0253CE00D27AA2 /* MessageUI.framework */; };
 		2280B6D41D0253DA00D27AA2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2280B6D31D0253DA00D27AA2 /* StoreKit.framework */; };
 		2280B6D61D0253E400D27AA2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2280B6D51D0253E400D27AA2 /* SystemConfiguration.framework */; };
+		228188161D253C8300E898BD /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228188151D253C8300E898BD /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		2280B6D11D0253CE00D27AA2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		2280B6D31D0253DA00D27AA2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2280B6D51D0253E400D27AA2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		228188151D253C8300E898BD /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				2280B6CC1D0253A200D27AA2 /* EventKit.framework in Frameworks */,
 				2280B6CA1D02536D00D27AA2 /* CoreMedia.framework in Frameworks */,
 				2280B6C41D02534700D27AA2 /* CoreGraphics.framework in Frameworks */,
+				228188161D253C8300E898BD /* GameKit.framework in Frameworks */,
 				2280B6C61D02535600D27AA2 /* CoreTelephony.framework in Frameworks */,
 				2280B6C81D02536300D27AA2 /* AVFoundation.framework in Frameworks */,
 				2280B6C21D02533B00D27AA2 /* AudioToolbox.framework in Frameworks */,
@@ -235,6 +238,7 @@
 		FFA8C7DCDAA3DD481EE343B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				228188151D253C8300E898BD /* GameKit.framework */,
 				2245A97B1D02E405001E0AE9 /* Mediation Adapters */,
 				2245A9791D02E365001E0AE9 /* GoogleMobileAds.framework */,
 				2280B6D51D0253E400D27AA2 /* SystemConfiguration.framework */,
@@ -316,20 +320,28 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Henry Goodwin";
 				TargetAttributes = {
 					225280551D0AFBBC00CAEB86 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8Q69TTNW38;
+						LastSwiftMigration = 0800;
 					};
 					225280611D0AFBBC00CAEB86 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8Q69TTNW38;
+						LastSwiftMigration = 0800;
 					};
 					225F47A01CE6D5E8002475A4 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8Q69TTNW38;
+						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -451,11 +463,11 @@
 		225280761D0AFBBC00CAEB86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Henry Goodwin (8Q69TTNW38)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Henry Goodwin (8Q69TTNW38)";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution: Henry Goodwin (8Q69TTNW38)";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Click_Timer_Watch_Extension;
 				INFOPLIST_FILE = "Click Timer Watch/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "Henry-Goodwin.Click-Timer";
@@ -463,6 +475,7 @@
 				PROVISIONING_PROFILE = "46a230ee-cfb0-4c5d-9710-000d9e0a8859";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -481,6 +494,7 @@
 				PROVISIONING_PROFILE = "46a230ee-cfb0-4c5d-9710-000d9e0a8859";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -500,8 +514,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Henry Goodwin (8Q69TTNW38)";
@@ -547,6 +563,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Henry-Goodwin.Click-Timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "46a230ee-cfb0-4c5d-9710-000d9e0a8859";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};

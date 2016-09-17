@@ -124,9 +124,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Click Timer" id="ewn-ae-UNw">
-                        <barButtonItem key="rightBarButtonItem" title="?" id="thI-0l-FJh">
+                        <barButtonItem key="rightBarButtonItem" image="Leaderboard-24" id="thI-0l-FJh">
                             <connections>
-                                <action selector="alertBtn:" destination="JGQ-Iq-hEV" id="ZlY-v9-T56"/>
+                                <action selector="callGc:" destination="JGQ-Iq-hEV" id="vxr-7K-O4j"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,4 +143,7 @@
             <point key="canvasLocation" x="1014" y="243"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Leaderboard-24" width="24" height="24"/>
+    </resources>
 </document>

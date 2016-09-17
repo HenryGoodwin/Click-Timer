@@ -8,11 +8,12 @@
 
 import UIKit
 import GoogleMobileAds
+import GameKit
 
-class ClickTimerVC: UIViewController, GADBannerViewDelegate, GADInterstitialDelegate {
+class ClickTimerVC: UIViewController, GADBannerViewDelegate, GADInterstitialDelegate, GKGameCenterControllerDelegate{
     
-    var timer:NSTimer = NSTimer()
-    var startTime = NSTimeInterval()
+    var timer:Timer = Timer()
+    var startTime = TimeInterval()
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -44,31 +45,33 @@ class ClickTimerVC: UIViewController, GADBannerViewDelegate, GADInterstitialDele
         rep = 0
 
         clearBtn.alpha = DIM_ALPHA
-        clearBtn.enabled = false
+        clearBtn.isEnabled = false
     
-        let fractionDefults = NSUserDefaults.standardUserDefaults()
-        let secondDefults = NSUserDefaults.standardUserDefaults()
-        let highscoreDefults = NSUserDefaults.standardUserDefaults()
+        let fractionDefults = UserDefaults.standard
+        let secondDefults = UserDefaults.standard
+        let highscoreDefults = UserDefaults.standard
         
-        if (fractionDefults.valueForKey("Mil") != nil){
+        if (fractionDefults.value(forKey: "Mil") != nil){
             
-            high = highscoreDefults.valueForKey("High") as! Int!
-            strSecs = secondDefults.valueForKey("Sec") as! String
-            strFrac = fractionDefults.valueForKey("Mil") as! String
+            high = highscoreDefults.value(forKey: "High") as! Int!
+            strSecs = secondDefults.value(forKey: "Sec") as! String
+            strFrac = fractionDefults.value(forKey: "Mil") as! String
     
             highscoreLbl.text = "Highscore: \(strSecs):\(strFrac)"
         }
         
-        banner.hidden = true
+        banner.isHidden = true
         
         banner.delegate = self
         
         banner.adUnitID = "ca-app-pub-7304033372417454/9689620645"
         banner.rootViewController = self
-        banner.loadRequest(GADRequest())
+        banner.load(GADRequest())
         
         createAndLoad()
         inter = createAndLoad()
+        
+        authPlayer()
 
         // Do any additional setup after loading the view.
     }
@@ -78,42 +81,42 @@ class ClickTimerVC: UIViewController, GADBannerViewDelegate, GADInterstitialDele
         // Dispose of any resources that can be recreated.
     }
     
-    func adViewDidReceiveAd(bannerView: GADBannerView!) {
-        banner.hidden = false
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
+        banner.isHidden = false
     }
     
-    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-        banner.hidden = true
+    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        banner.isHidden = true
     }
     
     func createAndLoad() -> GADInterstitial {
         let request = GADRequest()
         let interstit = GADInterstitial(adUnitID: "ca-app-pub-6065612350257414/1167327080")
         interstit.delegate = self
-        interstit.loadRequest(request)
+        interstit.load(request)
         return interstit
         
     }
     
-    func interstitialDidDismissScreen(ad: GADInterstitial!) {
+    func interstitialDidDismissScreen(_ ad: GADInterstitial!) {
         inter = createAndLoad()
         rep = 0
     }
     
-    @IBAction func startStopTimer(sender: UIButton) {
+    @IBAction func startStopTimer(_ sender: UIButton) {
         
-        if (!timer.valid) {
+        if (!timer.isValid) {
             
-            startStopBtn.setTitle("Stop", forState: UIControlState.Normal)
+            startStopBtn.setTitle("Stop", for: UIControlState())
             
             let aSelector : Selector = #selector(ClickTimerVC.updateTime)
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate()
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            startTime = Date.timeIntervalSinceReferenceDate
             
-            clearBtn.enabled = false
+            clearBtn.isEnabled = false
             clearBtn.alpha = DIM_ALPHA
             
-        } else if (timer.valid) {
+        } else if (timer.isValid) {
             
             invalidate()
 //            print(score)
@@ -123,14 +126,16 @@ class ClickTimerVC: UIViewController, GADBannerViewDelegate, GADInterstitialDele
     
     func invalidate() {
         
-        startStopBtn.setTitle("Start", forState: UIControlState.Normal)
+        startStopBtn.setTitle("Start", for: UIControlState())
         timer.invalidate()
         
-        startStopBtn.enabled = false
-        clearBtn.enabled = true
+        startStopBtn.isEnabled = false
+        clearBtn.isEnabled = true
         
         clearBtn.alpha = OPAQUE
         startStopBtn.alpha = DIM_ALPHA
+        
+        saveHighscore(score)
         
         if (score < high) {
             
@@ -140,32 +145,32 @@ class ClickTimerVC: UIViewController, GADBannerViewDelegate, GADInterstitialDele
             
             highscoreLbl.text = "Highscore: \(strSecs):\(strFrac)"
             
-            let secondsDefults = NSUserDefaults.standardUserDefaults()
+            let secondsDefults = UserDefaults.standard
             secondsDefults.setValue(strSecs, forKey: "Sec")
             secondsDefults.synchronize()
             
-            let highscoreDefults = NSUserDefaults.standardUserDefaults()
+            let highscoreDefults = UserDefaults.standard
             highscoreDefults.setValue(high, forKey: "High")
             highscoreDefults.synchronize()
             
-            let minutesDefults = NSUserDefaults.standardUserDefaults()
+            let minutesDefults = UserDefaults.standard
             minutesDefults.setValue(strFrac, forKey: "Mil")
             minutesDefults.synchronize()
         }
 
     }
     
-    @IBAction func clear(sender: UIButton) {
+    @IBAction func clear(_ sender: UIButton) {
         
         if rep != 5 {
         rep = rep + 1
         }
         
         label.text = "00:00"
-        startStopBtn.enabled = true
+        startStopBtn.isEnabled = true
         startStopBtn.alpha = OPAQUE
         
-        clearBtn.enabled = false
+        clearBtn.isEnabled = false
         clearBtn.alpha = DIM_ALPHA
         print(rep)
         
@@ -173,7 +178,7 @@ class ClickTimerVC: UIViewController, GADBannerViewDelegate, GADInterstitialDele
             
             if inter.isReady {
                 
-                inter?.presentFromRootViewController(self)
+                inter?.present(fromRootViewController: self)
                     
                 }
             
@@ -182,27 +187,76 @@ class ClickTimerVC: UIViewController, GADBannerViewDelegate, GADInterstitialDele
         
     
     
-    @IBAction func alertBtn(sender: UIButton) {
+    @IBAction func callGc(_ sender: UIButton) {
         
-        let alertView = UIAlertController(title: "Click Timer", message: "Press Stop as Quickly as You Can", preferredStyle: .Alert)
-        alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-        presentViewController(alertView, animated: true, completion: nil)
+        showLeaderBoard()
         
     }
-
+    
+    func authPlayer(){
+        let localPlayer = GKLocalPlayer.localPlayer()
+        
+        localPlayer.authenticateHandler = {
+            (view, error) in
+            
+            if view != nil {
+                
+                self.present(view!, animated: true, completion: nil)
+                
+            }
+            else {
+                
+                print(GKLocalPlayer.localPlayer().isAuthenticated)
+                
+            }
+            
+            
+        }
+    }
+    
+    func saveHighscore(_ number : Int){
+        
+        if GKLocalPlayer.localPlayer().isAuthenticated {
+            
+            let scoreReporter = GKScore(leaderboardIdentifier: "Leaderboard")
+            
+            scoreReporter.value = Int64(number)
+            
+            let scoreArray : [GKScore] = [scoreReporter]
+            
+            GKScore.report(scoreArray, withCompletionHandler: nil)
+            
+        }
+        
+        
+    }
+    
+    func showLeaderBoard(){
+        let viewController = self.view.window?.rootViewController
+        let gcvc = GKGameCenterViewController()
+        
+        gcvc.gameCenterDelegate = self
+        
+        viewController?.present(gcvc, animated: true, completion: nil)
+    }
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+        
+    }
     
     func updateTime() {
-        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        let currentTime = Date.timeIntervalSinceReferenceDate
         
         //Find the difference between current time and start time.
-        var elapsedTime: NSTimeInterval = currentTime - startTime
+        var elapsedTime: TimeInterval = currentTime - startTime
         
         //calculate the minutes in elapsed time.
         
         
         //calculate the seconds in elapsed time.
         seconds = Int(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
+        elapsedTime -= TimeInterval(seconds)
         
         //find out the fraction of milliseconds to be displayed.
         fraction = Int(elapsedTime * 10000)

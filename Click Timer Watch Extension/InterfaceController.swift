@@ -12,8 +12,8 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
     
-    var timer:NSTimer = NSTimer()
-    var startTime = NSTimeInterval()
+    var timer:Timer = Timer()
+    var startTime = TimeInterval()
     
     let DIM_ALPHA: CGFloat = 0.4
     let OPAQUE: CGFloat = 1.0
@@ -35,21 +35,21 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var start: WKInterfaceButton!
     @IBOutlet var reset: WKInterfaceButton!
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         reset.setAlpha(DIM_ALPHA)
         reset.setEnabled(false)
         
-        let fractionDefults = NSUserDefaults.standardUserDefaults()
-        let secondDefults = NSUserDefaults.standardUserDefaults()
-        let highscoreDefults = NSUserDefaults.standardUserDefaults()
+        let fractionDefults = UserDefaults.standard
+        let secondDefults = UserDefaults.standard
+        let highscoreDefults = UserDefaults.standard
         
-        if (fractionDefults.valueForKey("Mil") != nil){
+        if (fractionDefults.value(forKey: "Mil") != nil){
             
-            high = highscoreDefults.valueForKey("High") as! Int!
-            strSecs = secondDefults.valueForKey("Sec") as! String
-            strFrac = fractionDefults.valueForKey("Mil") as! String
+            high = highscoreDefults.value(forKey: "High") as! Int!
+            strSecs = secondDefults.value(forKey: "Sec") as! String
+            strFrac = fractionDefults.value(forKey: "Mil") as! String
             
             highs.setText("High: \(strSecs):\(strFrac)")
         }
@@ -70,20 +70,20 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func startStop() {
         
-        if (!timer.valid) {
+        if (!timer.isValid) {
             
 
             
             start.setTitle("Stop")
             
             let aSelector : Selector = #selector(InterfaceController.updateTime)
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate()
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            startTime = Date.timeIntervalSinceReferenceDate
             
             reset.setEnabled(false)
             reset.setAlpha(DIM_ALPHA)
             
-        } else if (timer.valid) {
+        } else if (timer.isValid) {
             
             invalidate()
             //            print(score)
@@ -111,15 +111,15 @@ class InterfaceController: WKInterfaceController {
             
             highs.setText("High: \(strSecs):\(strFrac)")
             
-            let secondsDefults = NSUserDefaults.standardUserDefaults()
+            let secondsDefults = UserDefaults.standard
             secondsDefults.setValue(strSecs, forKey: "Sec")
             secondsDefults.synchronize()
             
-            let highscoreDefults = NSUserDefaults.standardUserDefaults()
+            let highscoreDefults = UserDefaults.standard
             highscoreDefults.setValue(high, forKey: "High")
             highscoreDefults.synchronize()
             
-            let minutesDefults = NSUserDefaults.standardUserDefaults()
+            let minutesDefults = UserDefaults.standard
             minutesDefults.setValue(strFrac, forKey: "Mil")
             minutesDefults.synchronize()
         }
@@ -139,17 +139,17 @@ class InterfaceController: WKInterfaceController {
     
     
     func updateTime() {
-        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        let currentTime = Date.timeIntervalSinceReferenceDate
         
         //Find the difference between current time and start time.
-        var elapsedTime: NSTimeInterval = currentTime - startTime
+        var elapsedTime: TimeInterval = currentTime - startTime
         
         //calculate the minutes in elapsed time.
         
         
         //calculate the seconds in elapsed time.
         seconds = Int(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
+        elapsedTime -= TimeInterval(seconds)
         
         //find out the fraction of milliseconds to be displayed.
         fraction = Int(elapsedTime * 10000)
